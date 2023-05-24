@@ -69,8 +69,6 @@ class Api {
       body: JSON.stringify(data)
     }).then(this._checkResponse)
   }
-
-  
   _checkResponse(res) {
     // тут проверка ответа
     if (res.ok) {

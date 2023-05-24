@@ -18,14 +18,14 @@ export default function Main(props) {
             <section className="profile">
                 <div className="profile__items">
                     <div className="profile__avatar">
-                        <img className="profile__avatar-images" src={currentUser.avatar} alt={currentUser.name}/>
+                        <img className="profile__avatar-images" src={currentUser.avatar} alt={currentUser.name} />
                         <button type="button" className="profile__avatar-button" onClick={props.onEditAvatar}></button>
                     </div>
                     <div className="profile-info">
                         <div className="profile-info__title-group">
                             <h1 className="profile-info__title" >{currentUser.name}</h1>
                             <button className="profile-info__edit-button" type="button">
-                                <img src={pen} className="profile-info__images" alt="Редактировать" onClick={props.onEditProfile}/>
+                                <img src={pen} className="profile-info__images" alt="Редактировать" onClick={props.onEditProfile} />
                             </button>
                         </div>
                         <p className="profile-info__subtitle" >{currentUser.about}</p>
@@ -36,20 +36,20 @@ export default function Main(props) {
                 </button>
             </section>
             <section className="elements">
-            { props.cards?.map((card) => (
-            <Card
-              card={card}
-              key={card._id} 
-              link={card.link}
-              name={card.name}
-              likes={card.likes}
-              owner={card.owner}             
-              onCardClick={props.onCardClick}
-              onCardLike={props.onCardLike}
-              onCardDelete={props.onCardDelete}
-            />
-            ) )          
-        }      
+                {props.cards?.map((card) => (
+                    <Card
+                        card={card}
+                        key={card._id}
+                        link={card.link}
+                        name={card.name}
+                        likes={card.likes}
+                        owner={card.owner}
+                        onCardClick={props.onCardClick}
+                        onCardLike={props.onCardLike}
+                        onCardDelete={props.onCardDelete}
+                    />
+                ))
+                }
             </section>
         </main>
     )
