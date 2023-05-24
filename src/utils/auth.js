@@ -44,11 +44,11 @@ export function getToken(jwt) {
     .then((data) => data);
 }
 
-  function checkResponse(res) {
-    // тут проверка ответа
-    if (res.ok) {
-      return res.json();
-    }
+function checkResponse(res) {
+  // тут проверка ответа
+  if (res.ok) {
+    return res.json();
+  }
 
-    return Promise.reject(`Ошибка: ${res.status}`)
-    }
+  return Promise.reject(`Ошибка: ${res.status}`)
+}
